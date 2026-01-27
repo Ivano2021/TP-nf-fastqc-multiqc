@@ -1,19 +1,14 @@
 cff-version: 1.2.0
-title: "nf-fastqc-multiqc: FastQC + MultiQC pipeline in Nextflow DSL2 with Docker"
-message: "If you use this pipeline, please cite it using this metadata."
-type: software
+title: "Nextflow pipeline for FastQC and MultiQC"
+message: "If you use this software, please cite it as below."
 authors:
-  - family-names: "Privitera Signoretta"
-    given-names: "Iván"
-  - family-names: "Domínguez"
-    given-names: "Lucía"
-  - family-names: "Tranier"
-    given-names: "Estefanía"
+  - family-names: Privitera Signoretta
+    given-names: Iván
+    orcid: https://orcid.org/0000-0000-0000-0000
+  - family-names: Tranier
+    given-names: Estefanía
+repository-code: https://github.com/Ivano2021/TP-nf-fastqc-multiqc
+version: 1.0.0
+date-released: 2026-01-01
 license: MIT
-repository-code: "<TU_URL_DEL_REPO>"
-keywords:
-  - nextflow
-  - fastqc
-  - multiqc
-  - docker
-  - bioinformatics
+
