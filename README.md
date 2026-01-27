@@ -13,7 +13,7 @@ Este proyecto incluye benchmarks que demuestran el beneficio del paralelismo con
 | 197 MB | 65.3s | 18.0s | **3.6x** |
 | 984 MB | 140s | 30s | **4.7x** |
 
-Ver [INFORME_RESULTADOS.md](INFORME_RESULTADOS.md) para el análisis completo.
+Ver [INFORME_RESULTADOS.md](INFORME_RESULTADOS1.md) para el análisis completo.
 
 ## Estructura del Repositorio
 
