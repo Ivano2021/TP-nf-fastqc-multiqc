@@ -1,78 +1,44 @@
-# nf-fastqc-multiqc (Nextflow DSL2 + Docker)
+Benchmarking y análisis de rendimiento
 
-Pipeline de Control de Calidad (FastQC + MultiQC) implementado en **Nextflow DSL2** y ejecutable con **Docker** (incluye workaround para Apple Silicon M1/M2 con `--platform=linux/amd64`).
+Este repositorio incluye un análisis de rendimiento del pipeline FastQC + MultiQC con el objetivo de evaluar el impacto del paralelismo y la contenerización mediante Docker en entornos multi-core.
 
-## Contenido del repositorio
+Se compararon ejecuciones secuenciales y paralelas utilizando diferentes tamaños de datasets (desde ~20 MB hasta ~1 GB), manteniendo constante la lógica del pipeline y variando únicamente la configuración de ejecución mediante perfiles de Nextflow.
 
-- `main.nf`: pipeline Nextflow (DSL2)
-- `nextflow.config`: configuración (Docker + recursos)
-- `data/`: FASTQ de ejemplo (NO versionar datos pesados)
-- `results/`: outputs (NO versionar; se generan al correr)
-- `docs/TP_Pipelines_Privitera_Dominguez_Tranier.docx`: informe del TP
-- `docs/`: capturas/reportes opcionales (FastQC/MultiQC/trace/report/timeline)
+El benchmarking se basa en las siguientes métricas:
 
-## Requisitos
+Tiempo total de ejecución del pipeline
 
-- Java (recomendado: 17)
-- Nextflow (probado con 25.04.7)
-- Docker Desktop
+Speedup (relación entre ejecución secuencial y paralela)
 
-Verificar instalación:
-```bash
-nextflow -version
-docker --version
-```
+Tiempo ahorrado mediante paralelismo
 
-## Quick start (local + Docker)
+Distribución temporal de los procesos
 
-1) Clonar:
-```bash
-git clone <TU_URL_DEL_REPO>
-cd nf-fastqc-multiqc
-```
+Uso de CPU y memoria
 
-2) Colocar al menos un FASTQ en `data/` (ejemplo):
-```bash
-cp /ruta/a/archivo.fastq.gz data/
-```
+Los datos de benchmark fueron obtenidos a partir de los archivos de trace generados automáticamente por Nextflow (-with-trace), los cuales se encuentran disponibles en el directorio:
 
-3) Ejecutar:
-```bash
-nextflow run main.nf -resume
-```
+docs/benchmarks/
 
-## Generar reportes de trazabilidad (obligatorio TP)
 
-```bash
-nextflow run main.nf \
-  -with-report report.html \
-  -with-trace trace.txt \
-  -with-timeline timeline.html \
-  -with-dag flowchart.png \
-  -resume
-```
+Cada archivo trace_*.txt contiene información detallada sobre:
 
-Abrir reportes en macOS:
-```bash
-open report.html
-open timeline.html
-open flowchart.png
-open trace.txt
-```
+Duración de cada proceso
 
-## Nota Apple Silicon (M1/M2)
+Uso de CPU
 
-En `nextflow.config` se fuerza la plataforma para imágenes amd64:
-```groovy
-docker.runOptions = '--platform=linux/amd64'
-```
+Consumo de memoria
 
-## Reproducibilidad
+Orden y concurrencia de ejecución
 
-Contenedores usados:
-- FastQC: `biocontainers/fastqc:v0.11.9_cv8`
-- MultiQC: `ewels/multiqc:latest`
+Los gráficos y el análisis detallado de los resultados (speedup, escalabilidad y eficiencia) se presentan en el informe técnico incluido en el repositorio:
 
-## Licencia
+INFORME_RESULTADOS.md
 
-MIT (ver `LICENSE`).
+
+Los scripts utilizados para generar los datos de prueba, ejecutar los benchmarks y producir las visualizaciones se encuentran en el directorio:
+
+scripts/
+
+
+Este enfoque garantiza la reproducibilidad completa de los resultados y permite verificar empíricamente el comportamiento del pipeline bajo diferentes configuraciones de ejecución.
