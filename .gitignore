@@ -1,0 +1,14 @@
+# Nextflow
+work/
+results/
+.nextflow/
+.nextflow.log
+
+# Data (benchmarks y FASTQ grandes)
+data/
+
+# Logs
+*.log
+
+# Sistema
+.DS_Store
