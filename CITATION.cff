@@ -4,7 +4,7 @@ message: "If you use this software, please cite it as below."
 authors:
   - family-names: Privitera Signoretta
     given-names: Iván
-    orcid: https://orcid.org/0000-0000-0000-0000
+    https://orcid.org/0009-0009-5633-6228
   - family-names: Tranier
     given-names: Estefanía
 repository-code: https://github.com/Ivano2021/TP-nf-fastqc-multiqc
