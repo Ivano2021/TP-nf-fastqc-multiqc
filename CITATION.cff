@@ -1,14 +1,22 @@
 cff-version: 1.2.0
-title: "Nextflow pipeline for FastQC and MultiQC"
 message: "If you use this software, please cite it as below."
+
+title: "Nextflow pipeline for FastQC and MultiQC"
+
+type: software
+
 authors:
-  - family-names: Privitera Signoretta
-    given-names: Iván
-    https://orcid.org/0009-0009-5633-6228
-  - family-names: Tranier
-    given-names: Estefanía
-repository-code: https://github.com/Ivano2021/TP-nf-fastqc-multiqc
-version: 1.0.0
-date-released: 2026-01-01
-license: MIT
+  - family-names: "Privitera Signoretta"
+    given-names: "Iván"
+    orcid: "https://orcid.org/0009-0009-5633-6228"
+  - family-names: "Tranier"
+    given-names: "Estefanía"
+
+version: "1.0.0"
+date-released: "2026-01-01"
+
+repository-code: "https://github.com/Ivano2021/TP-nf-fastqc-multiqc"
+url: "https://github.com/Ivano2021/TP-nf-fastqc-multiqc"
+
+license: "MIT"
 
