@@ -131,10 +131,9 @@ nextflow run main.nf --reads "data/set_100mb/*.fastq.gz" -profile parallel -with
 python3 scripts/generate_charts.py
 ```
 
-## Autores
+## Autor
 
 - Iván Privitera Signoretta
-- Estefanía Tranier
 
 ## Licencia
 
